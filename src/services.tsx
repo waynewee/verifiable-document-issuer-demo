@@ -9,11 +9,11 @@ export const initializeMetaMask = async () => {
 
   await ethereum.enable();
   const web3provider = new ethers.providers.Web3Provider(ethereum);
-  const signer = web3provider.getSigner();
+  const signer: JsonRpcSigner = web3provider.getSigner();
   return signer;
 };
 
-export const deploy = async (signer: JsonRpcSigner) => {
+export const deployDocumentStore = async (signer: JsonRpcSigner) => {
   const factory = new DocumentStoreFactory(signer);
   const documentStore = await factory.deploy("DEMO_DOCUMENT_STORE");
   await documentStore.deployTransaction.wait();

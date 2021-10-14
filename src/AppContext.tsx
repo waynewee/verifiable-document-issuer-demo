@@ -1,9 +1,9 @@
 import { WrappedDocument } from "@govtechsg/open-attestation/dist/types/2.0/types";
-import { ethers } from "ethers";
+import { JsonRpcSigner } from "@ethersproject/providers";
 import { createContext } from "react";
 
 interface IAppContext {
-  signer?: ethers.providers.JsonRpcSigner;
+  signer?: JsonRpcSigner;
   documentStoreAddress?: string;
   setDocumentStoreAddress: (documentStoreAddress: string) => void;
   dns?: string;

@@ -1,7 +1,7 @@
 import { Button, Col, message, Row } from "antd";
 import { useContext, useState } from "react";
 import { AppContext } from "../AppContext";
-import { deploy } from "../services";
+import { deployDocumentStore } from "../services";
 
 export const DocumentStoreDeploy = () => {
   const {
@@ -17,7 +17,7 @@ export const DocumentStoreDeploy = () => {
   const onClick = async () => {
     try {
       setLoading(true);
-      const documentStoreAddress = await deploy(signer!);
+      const documentStoreAddress = await deployDocumentStore(signer!);
       setLoading(false);
       setDocumentStoreAddress(documentStoreAddress);
       message.success("Document store successfully deployed");

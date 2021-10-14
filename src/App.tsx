@@ -13,9 +13,9 @@ import {
   FormOutlined,
 } from "@ant-design/icons";
 import { DocumentStoreDeploy } from "./components/DocumentStoreDeploy";
-import { DnsInput } from "./components/DnsInput";
-import DocumentForm from "./components/DocumentForm";
-import { ActionButtons } from "./components/ActionButtons";
+import { DnsConfig } from "./components/DnsConfig";
+import { DocumentForm } from "./components/DocumentForm";
+import { Actions } from "./components/Actions";
 
 const { Step } = Steps;
 
@@ -45,8 +45,8 @@ function App() {
       clickable: documentStoreAddress !== undefined,
     },
     {
-      title: "Input Domain Name",
-      component: <DnsInput />,
+      title: "Domain Name Configuration",
+      component: <DnsConfig />,
       icon: <CloudServerOutlined />,
       clickable: dns !== undefined,
     },
@@ -58,7 +58,7 @@ function App() {
     },
     {
       title: "Download & Verify",
-      component: <ActionButtons />,
+      component: <Actions />,
       icon: <CheckCircleOutlined />,
       clickable: issued,
     },

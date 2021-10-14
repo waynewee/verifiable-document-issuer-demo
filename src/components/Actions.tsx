@@ -3,7 +3,7 @@ import { FunctionComponent, useContext } from "react";
 import { AppContext } from "../AppContext";
 import { saveAs } from "file-saver";
 
-export const ActionButtons: FunctionComponent = () => {
+export const Actions: FunctionComponent = () => {
   const { wrappedDocument, setCurrentStep, currentStep, setIssued } =
     useContext(AppContext);
 

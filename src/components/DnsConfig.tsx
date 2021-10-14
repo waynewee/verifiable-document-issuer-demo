@@ -3,7 +3,7 @@ import { Button, Col, Input, message, Row } from "antd";
 import { FunctionComponent, useContext, useRef } from "react";
 import { AppContext } from "../AppContext";
 
-export const DnsInput: FunctionComponent = () => {
+export const DnsConfig: FunctionComponent = () => {
   const { documentStoreAddress, setDns, dns, setCurrentStep, currentStep } =
     useContext(AppContext);
 
@@ -20,6 +20,18 @@ export const DnsInput: FunctionComponent = () => {
 
   return (
     <div>
+      <div style={{ marginBottom: 12 }}>
+        Install the{" "}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.openattestation.com/docs/component/open-attestation-cli"
+        >
+          Open Attestation CLI
+        </a>
+        &nbsp; here and paste the command below into a terminal to get a
+        temporary DNS
+      </div>
       <Row
         align="top"
         style={{
@@ -34,10 +46,10 @@ export const DnsInput: FunctionComponent = () => {
         onClick={onCopy}
       >
         <Col span={23}>
-          <span>
+          <div>
             open-attestation dns txt-record create --address&nbsp;
             {documentStoreAddress} --network-id 3
-          </span>
+          </div>
         </Col>
         <Col style={{ textAlign: "end" }} span={1}>
           <CopyOutlined />
